@@ -1,0 +1,30 @@
+# Importing math library
+import math
+
+def pol2cart(rho=None, phi=None):
+# Converting polar to cartesian coordinates
+    x = rho * math.cos(phi * math.pi/180.0)
+    y = rho * math.sin(phi * math.pi/180.0)
+    return(x,y)
+# Reading radius and angle of polar coordinate
+rho = float(input('Enter radius: '))
+phi = float(input('Enter theta in degree: '))
+m=pol2cart(rho,phi)
+# Displaying cartesian coordinates
+print('Cartesian coordinate is: (x = %0.2f, y = %0.2f)' %(m))
+
+def cart2pol(x, y):
+# Converting cartesian to polar coordinate
+# Calculating radius
+    rho = math.sqrt(x*x + y*y)
+# Calculating angle (theta) in radian
+    phi = math.atan2(y, x)
+# Converting theta from radian to degree
+    phi = 180 * phi/math.pi
+    return(rho, phi)
+# Reading cartesian coordinate    
+x = float(input('Enter value of x: '))
+y = float(input('Enter value of y: '))
+m=cart2pol(rho,phi)
+# Displaying polar coordinates
+print('Polar coordinate is: (radius = %0.2f,theta = %0.2f)' %(m))
